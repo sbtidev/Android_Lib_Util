@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="empty_list">Lista Vazia</string>
+    <string name="internal_error">Erro interno</string>
+    <string name="ok">OK</string>
+    <string name="confirm">Confirmação</string>
+    <string name="cancell">Cancelar</string>
 </resources>
