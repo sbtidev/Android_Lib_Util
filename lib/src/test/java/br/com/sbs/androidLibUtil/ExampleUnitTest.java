@@ -1,4 +1,4 @@
-package br.com.sbs.android_lib_util;
+package br.com.sbs.androidLibUtil;
 
 import org.junit.Test;
 

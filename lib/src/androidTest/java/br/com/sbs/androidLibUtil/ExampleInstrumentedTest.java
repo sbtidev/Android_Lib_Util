@@ -1,4 +1,4 @@
-package br.com.sbs.android_lib_util;
+package br.com.sbs.androidLibUtil;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -18,9 +18,7 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
     @Test
     public void useAppContext() {
-        // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("br.com.sbs.android_lib_util", appContext.getPackageName());
+        assertEquals("br.com.sbs.androidLibUtil", appContext.getPackageName());
     }
 }
