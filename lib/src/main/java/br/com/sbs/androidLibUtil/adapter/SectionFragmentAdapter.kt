@@ -8,9 +8,8 @@ import android.support.v4.app.FragmentStatePagerAdapter
  * Created by Valmir Júnior on 22/11/2017.
  * Class to represent an Action Button Dialog
  */
-class SectionFragmentAdapter(fm: FragmentManager,
-                             private var titles: List<String>,
-                             private var fragments: List<Fragment>?) : FragmentStatePagerAdapter(fm) {
+class SectionFragmentAdapter(fm: FragmentManager, private var titles: List<String>,
+                             private var fragments: List<Fragment>?): FragmentStatePagerAdapter(fm){
 
     /**
      * @param position to get title

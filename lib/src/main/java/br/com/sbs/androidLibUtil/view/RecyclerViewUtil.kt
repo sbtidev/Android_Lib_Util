@@ -31,7 +31,8 @@ object RecyclerViewUtil {
      * @param adapter
      * @param context
      */
-    fun setUpRecycler(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, context: Context) {
+    fun setUpRecycler(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>,
+                      context: Context) {
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
         recyclerView.addItemDecoration(getItemDecorationDefault(recyclerView, layoutManager))
@@ -45,7 +46,8 @@ object RecyclerViewUtil {
      * @param adapter
      * @param context
      */
-    fun setUpRecyclerWithOutItemDecoration(recyclerView: RecyclerView, adapter: RecyclerView.Adapter<*>, context: Context) {
+    fun setUpRecyclerWithOutItemDecoration(recyclerView: RecyclerView,
+                                           adapter: RecyclerView.Adapter<*>, context: Context) {
         val layoutManager = LinearLayoutManager(context)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = adapter
