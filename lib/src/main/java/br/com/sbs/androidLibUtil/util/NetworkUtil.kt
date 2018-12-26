@@ -58,12 +58,7 @@ object NetworkUtil {
                 headers["Authorization"] = authorizationKey
                 return headers
             }
-
-            override fun getRetryPolicy(): RetryPolicy {
-//                super.getRetryPolicy()
-                return DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)
-            }
-        })
+        }.setRetryPolicy(DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)))
     }
 
 
@@ -81,10 +76,6 @@ object NetworkUtil {
                 headers["Authorization"] = authorizationKey
                 return headers
             }
-
-            override fun getRetryPolicy(): RetryPolicy {
-                return DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)
-            }
-        })
+        }.setRetryPolicy(DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)))
     }
 }
