@@ -4,8 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import br.com.sbs.androidLibUtil.R
 import br.com.sbs.androidLibUtil.exception.ConnectionException
-import com.android.volley.RequestQueue
-import com.android.volley.Response
+import com.android.volley.*
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -22,6 +21,7 @@ object NetworkUtil {
     private var authorizationKey=""
     private var noConnectionMsg="noConnection"
     private var baseUrl=""
+    var mySocketTimeoutMs = 5000
 
     fun isActive(): Boolean {
         val nf = this.cn?.activeNetworkInfo
@@ -56,6 +56,12 @@ object NetworkUtil {
                 headers["Authorization"] = authorizationKey
                 return headers
             }
+
+            override fun getRetryPolicy(): RetryPolicy {
+                return DefaultRetryPolicy(mySocketTimeoutMs,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+            }
         })
     }
 
@@ -73,6 +79,12 @@ object NetworkUtil {
                 val headers = HashMap<String, String>()
                 headers["Authorization"] = authorizationKey
                 return headers
+            }
+
+            override fun getRetryPolicy(): RetryPolicy {
+                return DefaultRetryPolicy(mySocketTimeoutMs,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
             }
         })
     }
