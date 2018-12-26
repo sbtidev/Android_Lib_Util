@@ -21,7 +21,9 @@ object NetworkUtil {
     private var authorizationKey=""
     private var noConnectionMsg="noConnection"
     private var baseUrl=""
-    var mySocketTimeoutMs = 5000
+    var MY_TIMEOUT_MS = 5000
+    var MY_MAX_RETRIES = 1
+    var MY_BACKOFF_MULT = 1f
 
     fun isActive(): Boolean {
         val nf = this.cn?.activeNetworkInfo
@@ -58,9 +60,8 @@ object NetworkUtil {
             }
 
             override fun getRetryPolicy(): RetryPolicy {
-                return DefaultRetryPolicy(mySocketTimeoutMs,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+//                super.getRetryPolicy()
+                return DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)
             }
         })
     }
@@ -82,9 +83,7 @@ object NetworkUtil {
             }
 
             override fun getRetryPolicy(): RetryPolicy {
-                return DefaultRetryPolicy(mySocketTimeoutMs,
-                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
+                return DefaultRetryPolicy(MY_TIMEOUT_MS,MY_MAX_RETRIES,MY_BACKOFF_MULT)
             }
         })
     }
