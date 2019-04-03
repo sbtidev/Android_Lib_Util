@@ -1,8 +1,8 @@
 package br.com.sbs.app
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.sbs.androidLibUtil.util.NotificationUtil
 
 class MainActivity : AppCompatActivity() {

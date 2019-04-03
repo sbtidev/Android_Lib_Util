@@ -1,9 +1,9 @@
 package br.com.sbs.androidLibUtil.util
 
-import android.support.annotation.IdRes
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v7.app.AppCompatActivity
+import androidx.annotation.IdRes
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+
 
 /**
  * Created by Valmir Júnior on 26/09/2017.
