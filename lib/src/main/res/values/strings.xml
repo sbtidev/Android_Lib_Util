@@ -5,4 +5,5 @@
     <string name="confirm">Confirmação</string>
     <string name="cancell">Cancelar</string>
     <string name="no_connection_with_internet">Sem conexão com a internet</string>
+    <string name="empty_list">Lista Vazia</string>
 </resources>
