@@ -9,7 +9,7 @@ import com.google.gson.Gson
 
 class SharedPrefGeneric(context: Context) {
     private val sharedPreferences = context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
-    private var editor = sharedPreferences.edit()
+    private val editor = sharedPreferences.edit()
     private val gson = Gson()
 
 
