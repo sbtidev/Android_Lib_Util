@@ -16,19 +16,19 @@ object LocalFormatterTime {
     /***
      * Formatter for Dates and Times
      */
-    var formatterDateHour = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-    var formatterDate = SimpleDateFormat("yyyy-MM-dd")
-    var formatterDateMothAndDay = SimpleDateFormat("dd/MM")
+    val formatterDateHour = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    val formatterDate = SimpleDateFormat("yyyy-MM-dd")
+    val formatterDateMothAndDay = SimpleDateFormat("dd/MM")
     /**
      * This formater recover date from string to correct usage
      */
-    var formatterHour = SimpleDateFormat("HH:mm:ss")
+    val formatterHour = SimpleDateFormat("HH:mm:ss")
 
     /**
      * This formarter convert the date to the Format in correct way
      */
-    var formatterDateHourDeffault = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-    var formatterHourDeffaut = SimpleDateFormat("HH:mm:ss")
+    val formatterDateHourDeffault = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+    val formatterHourDeffaut = SimpleDateFormat("HH:mm:ss")
 
     /**
      * Regex to matches the Formatter Times
@@ -75,14 +75,12 @@ object LocalFormatterTime {
      * @return the type of PatternDate that the pattern attends
      */
     private fun findPattern(pattern: String): PatternDate {
-        if (pattern.matches(regexDateHour.toRegex())) {
-            return PatternDate.DATE_HOUR
-        } else if (pattern.matches(regexDAte.toRegex())) {
-            return PatternDate.DATE
-        } else if (pattern.matches(regexHour.toRegex())) {
-            return PatternDate.HOURS
+        return when {
+            pattern.matches(regexDateHour.toRegex()) -> PatternDate.DATE_HOUR
+            pattern.matches(regexDAte.toRegex()) -> PatternDate.DATE
+            pattern.matches(regexHour.toRegex()) -> PatternDate.HOURS
+            else -> PatternDate.UNKNOWN
         }
-        return PatternDate.UNKNOWN
     }
 
     fun getActualTimeFormatted(date: Date): String {
