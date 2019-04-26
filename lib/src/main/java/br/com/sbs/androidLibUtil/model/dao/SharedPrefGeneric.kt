@@ -8,9 +8,9 @@ import com.google.gson.Gson
  */
 
 class SharedPrefGeneric(context: Context) {
-    private val sharedPreferences = context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
-    private val editor = sharedPreferences.edit()
-    private val gson = Gson()
+    val sharedPreferences = context.getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE)
+    val editor = sharedPreferences.edit()
+    val gson = Gson()
 
 
     fun saveObject(any: Any, key: String) {
